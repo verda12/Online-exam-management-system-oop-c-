@@ -1,0 +1,2 @@
+Verda|1023|CS-201|Object-Oriented Programming|13|20|D|27/04/2026
+Verda|1023|CS-301|Data Structures & Algorithms|7|20|F|27/04/2026

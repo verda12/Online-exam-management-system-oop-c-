@@ -1,0 +1,49 @@
+# Project: OnlineExamSystem
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o src/Question.o src/Exam.o src/Student.o src/GradingEngine.o src/FileManager.o src/ExamBank.o src/StudentRegistry.o
+LINKOBJ  = main.o src/Question.o src/Exam.o src/Student.o src/GradingEngine.o src/FileManager.o src/ExamBank.o src/StudentRegistry.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"src"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"src"
+BIN      = OnlineExamSystem.exe
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+src/Question.o: src/Question.cpp
+	$(CPP) -c src/Question.cpp -o src/Question.o $(CXXFLAGS)
+
+src/Exam.o: src/Exam.cpp
+	$(CPP) -c src/Exam.cpp -o src/Exam.o $(CXXFLAGS)
+
+src/Student.o: src/Student.cpp
+	$(CPP) -c src/Student.cpp -o src/Student.o $(CXXFLAGS)
+
+src/GradingEngine.o: src/GradingEngine.cpp
+	$(CPP) -c src/GradingEngine.cpp -o src/GradingEngine.o $(CXXFLAGS)
+
+src/FileManager.o: src/FileManager.cpp
+	$(CPP) -c src/FileManager.cpp -o src/FileManager.o $(CXXFLAGS)
+
+src/ExamBank.o: src/ExamBank.cpp
+	$(CPP) -c src/ExamBank.cpp -o src/ExamBank.o $(CXXFLAGS)
+
+src/StudentRegistry.o: src/StudentRegistry.cpp
+	$(CPP) -c src/StudentRegistry.cpp -o src/StudentRegistry.o $(CXXFLAGS)
